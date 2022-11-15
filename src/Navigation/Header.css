@@ -1,0 +1,32 @@
+header {
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid rgb(38, 38, 39);
+  padding: 8px 30px;
+}
+
+.my-flex {
+  display: flex;
+}
+
+.logo {
+  align-items: center;
+  gap: 20px;
+}
+
+.logo-title {
+  font-size: 30px;
+}
+
+.nav-list {
+  list-style: none;
+  gap: 12px;
+}
+
+.nav-list li {
+  color: rgb(63, 21, 218);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}

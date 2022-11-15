@@ -13,6 +13,8 @@ The Space Traveller's hub is web application that works with real live data from
 - Gitflow
 - Hooks, States, Props
 - SpaceX API
+- Jest
+- React Testing Library
 
 ## Getting Started
 

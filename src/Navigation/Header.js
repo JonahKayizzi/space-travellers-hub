@@ -1,5 +1,12 @@
+import { NavLink } from 'react-router-dom';
 import './Header.css';
 import Logo from './images/logo.png';
+
+const links = [
+  { id: 1, path: '/', text: 'ROCKETS' },
+  { id: 2, path: '/missions', text: 'MISSIONS' },
+  { id: 3, path: '/myprofile', text: 'MY PROFILE' },
+];
 
 const Header = () => (
   <header className="header my-flex">
@@ -9,10 +16,13 @@ const Header = () => (
     </div>
     <nav className="navbar">
       <ul className="nav-list my-flex">
-        <li>Rockets</li>
-        <li>Missions</li>
-        |
-        <li>My Profile</li>
+        {links.map((link) => (
+          <li key={link.id}>
+            <NavLink to={link.path} activeClassName="active-link" end>
+              {link.text}
+            </NavLink>
+          </li>
+        ))}
       </ul>
     </nav>
   </header>

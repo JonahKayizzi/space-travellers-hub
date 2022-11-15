@@ -6,6 +6,10 @@ header {
   padding: 8px 30px;
 }
 
+li a {
+  text-decoration: none;
+}
+
 .my-flex {
   display: flex;
 }
@@ -19,14 +23,22 @@ header {
   font-size: 30px;
 }
 
-.nav-list {
-  list-style: none;
-  gap: 12px;
+.logo-img {
+  background-color: #fff;
 }
 
-.nav-list li {
-  color: rgb(63, 21, 218);
+.nav-list {
+  list-style: none;
+  gap: 5em;
+}
+
+.nav-list li a {
+  color: #fff;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
+}
+
+.active {
+  text-decoration: underline;
 }

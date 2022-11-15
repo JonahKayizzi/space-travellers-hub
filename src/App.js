@@ -1,10 +1,15 @@
 import './App.css';
+import { Route, Routes } from 'react-router';
 import Header from './Navigation/Header';
+import MyProfile from './Components/MyProfile';
 
 function App() {
   return (
     <div className="App">
       <Header />
+      <Routes>
+        <Route exact path="/myprofile" element={<MyProfile />} />
+      </Routes>
     </div>
   );
 }

@@ -9,12 +9,40 @@ const Missions = () => {
     dispatch(fetchMissons());
   }, []);
 
+  const handleJoin = () => {};
+
   return (
-    <>
-      {fetchedMissions.missions.map((mission) => (
-        <p key={mission.mission_id}>{mission.mission_name}</p>
-      ))}
-    </>
+    <table className="missions-table">
+      <thead>
+        <tr>
+          <th>Mission</th>
+          <th>Description</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {fetchedMissions.missions.map((mission) => (
+          <tr key={mission.mission_id}>
+            <td className="ms-name-col">{mission.mission_name}</td>
+            <td className="ms-desc-col">{mission.description}</td>
+            <td className="ms-status-col">
+              <p className="mission-status">{mission.status}</p>
+            </td>
+            <td className="ms-btn-col">
+              <button
+                className="mission-button"
+                type="button"
+                onClick={handleJoin}
+                id={mission.mission_id}
+              >
+                {mission.action}
+              </button>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
   );
 };
 

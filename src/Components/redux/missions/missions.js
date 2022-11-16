@@ -27,6 +27,8 @@ const missionsSlice = createSlice({
         mission_id: mission.mission_id,
         mission_name: mission.mission_name,
         description: mission.description,
+        status: 'NOT A MEMBER',
+        action: 'Join Mission',
       }));
     },
   },

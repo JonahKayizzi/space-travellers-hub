@@ -39,6 +39,10 @@ tbody tr:nth-child(odd) {
   background-color: rgba(255, 255, 255, 0.15);
 }
 
+th {
+  padding: 1em;
+}
+
 td {
   display: table-cell;
   padding: 1em;
@@ -52,15 +56,17 @@ td {
   border-radius: 4px;
   font-size: 0.7em;
   text-align: center;
-  padding: 0.3em;
+  padding: 0.5em;
+  border: solid 1px #fff;
 }
 
 .mission-button {
-  background-color: rgba(255, 255, 255, 0);
+  background-color: #000;
   color: #fff;
   border: solid 1px #fff;
-  padding: 0.5em;
+  padding: 1em;
   font-size: 0.7em;
+  cursor: pointer;
 }
 
 .ms-name-col,
@@ -71,4 +77,16 @@ td {
 
 .ms-btn-col {
   text-align: center;
+}
+
+.reserved td p {
+  background-color: #fff;
+  color: #000;
+  font-weight: bold;
+}
+
+.reserved td button {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: none;
 }

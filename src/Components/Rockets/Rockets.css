@@ -1,5 +1,29 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.container {
+  margin-top: 20px;
+}
+
+.flex {
+  display: flex;
+}
+
+.card {
+  gap: 15px;
+  margin: 25px 0;
+}
+
+.flickr {
+  width: 30%;
+}
+
+.flickr img {
+  width: 400px;
+}
+
+.rocket-name {
+  font-size: 25px;
+  line-height: 40px;
+}
+
+.description {
+  margin: 10px 0;
 }

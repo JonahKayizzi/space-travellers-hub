@@ -1,4 +1,4 @@
-// import './Rockets.css';
+import './Rockets.css';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchRockets } from '../redux/rockets/rockets';
@@ -13,7 +13,7 @@ const Rockets = () => {
     }
   });
   return (
-    <div>
+    <div className="container">
       {rocketsData.map((rocketData) => (
         <Rocket key={rocketData.id} rocket={rocketData} />
       ))}

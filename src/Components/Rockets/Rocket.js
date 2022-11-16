@@ -3,16 +3,16 @@ import PropTypes from 'prop-types';
 const Rocket = (props) => {
   const { rocket } = props;
   return (
-    <div>
-      <div>
+    <div className="card flex">
+      <div className="flickr">
         <img src={rocket.flickr_images[0]} alt={rocket.rocket_name} />
       </div>
 
       <div>
         <div>
-          <span>{rocket.rocket_name}</span>
+          <span className="rocket-name">{rocket.rocket_name}</span>
         </div>
-        <div>
+        <div className="description">
           <span>{rocket.description}</span>
         </div>
       </div>

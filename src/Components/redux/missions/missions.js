@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/tookit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import types from '../types/types';
 
@@ -7,17 +7,12 @@ const initialState = {
 };
 
 const URL = 'https://api.spacexdata.com/v3/missions';
-
 export const fetchMissons = createAsyncThunk(
   types.MISSIONS_FETCHED,
-  async (thunkAPI) => {
-    try {
-      const response = await axios.get(URL);
-      return response.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.response.data);
-    }
-  }
+  async () => {
+    const response = await axios.get(URL);
+    return response.data;
+  },
 );
 
 const missionsSlice = createSlice({
@@ -25,11 +20,12 @@ const missionsSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: {
+    [fetchMissons.pending]: () => {},
     [fetchMissons.fulfilled]: (state, action) => {
-      Object.assign(state, action.payload);
-      console.log(state.missions);
+      // eslint-disable-next-line no-param-reassign
+      state.missions = action.payload;
     },
   },
 });
 
-export default missionsSlice;
+export default missionsSlice.reducer;

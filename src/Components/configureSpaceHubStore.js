@@ -1,10 +1,10 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import missionsSlice from './redux/missions/missions';
 
-const slices = combineReducers({
+const reducer = combineReducers({
   missionSlice: missionsSlice,
 });
 
-const spaceHubStore = configureStore({ slices });
+const spaceHubStore = configureStore({ reducer });
 
 export default spaceHubStore;

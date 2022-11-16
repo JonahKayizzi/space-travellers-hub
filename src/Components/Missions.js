@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchMissons } from './redux/missions/missions';
+import { fetchMissons, updateReserved } from './redux/missions/missions';
 
 const Missions = () => {
   const fetchedMissions = useSelector((state) => state.missionSlice);
@@ -9,7 +9,9 @@ const Missions = () => {
     dispatch(fetchMissons());
   }, []);
 
-  const handleJoin = () => {};
+  const handleJoin = (missionId) => {
+    dispatch(updateReserved(missionId));
+  };
 
   return (
     <table className="missions-table">
@@ -23,20 +25,25 @@ const Missions = () => {
       </thead>
       <tbody>
         {fetchedMissions.missions.map((mission) => (
-          <tr key={mission.mission_id}>
+          <tr
+            className={mission.reserved ? 'reserved' : 'unreserved'}
+            key={mission.mission_id}
+          >
             <td className="ms-name-col">{mission.mission_name}</td>
             <td className="ms-desc-col">{mission.description}</td>
             <td className="ms-status-col">
-              <p className="mission-status">{mission.status}</p>
+              <p className="mission-status">
+                {mission.reserved ? 'Active Member' : 'NOT A MEMBER'}
+              </p>
             </td>
             <td className="ms-btn-col">
               <button
                 className="mission-button"
                 type="button"
-                onClick={handleJoin}
+                onClick={() => handleJoin(mission.mission_id)}
                 id={mission.mission_id}
               >
-                {mission.action}
+                {mission.reserved ? 'Leave Mission' : 'Join Mission'}
               </button>
             </td>
           </tr>

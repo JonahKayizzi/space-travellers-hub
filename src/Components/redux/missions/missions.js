@@ -12,13 +12,26 @@ export const fetchMissons = createAsyncThunk(
   async () => {
     const response = await axios.get(URL);
     return response.data;
-  },
+  }
 );
 
 const missionsSlice = createSlice({
   name: 'missionSlice',
   initialState,
-  reducers: {},
+  reducers: {
+    updateReserved: (state, action) => ({
+      ...state,
+      missions: state.missions.map((thisMission) => {
+        if (thisMission.mission_id === action.payload) {
+          return {
+            ...thisMission,
+            reserved: !thisMission.reserved,
+          };
+        }
+        return thisMission;
+      }),
+    }),
+  },
   extraReducers: {
     [fetchMissons.fulfilled]: (state, action) => {
       // eslint-disable-next-line no-param-reassign
@@ -27,11 +40,12 @@ const missionsSlice = createSlice({
         mission_id: mission.mission_id,
         mission_name: mission.mission_name,
         description: mission.description,
-        status: 'NOT A MEMBER',
-        action: 'Join Mission',
+        reserved: false,
       }));
     },
   },
 });
+
+export const { updateReserved } = missionsSlice.actions;
 
 export default missionsSlice.reducer;

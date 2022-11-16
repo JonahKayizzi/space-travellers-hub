@@ -12,7 +12,7 @@ export const fetchMissons = createAsyncThunk(
   async () => {
     const response = await axios.get(URL);
     return response.data;
-  }
+  },
 );
 
 const missionsSlice = createSlice({

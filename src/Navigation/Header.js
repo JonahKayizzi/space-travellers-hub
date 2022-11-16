@@ -18,7 +18,7 @@ const Header = () => (
       <ul className="nav-list my-flex">
         {links.map((link) => (
           <li key={link.id}>
-            <NavLink to={link.path} activeClassName="active-link" end>
+            <NavLink to={link.path} activeclassname="active-link" end>
               {link.text}
             </NavLink>
           </li>

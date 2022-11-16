@@ -20,10 +20,14 @@ const missionsSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: {
-    [fetchMissons.pending]: () => {},
     [fetchMissons.fulfilled]: (state, action) => {
       // eslint-disable-next-line no-param-reassign
-      state.missions = action.payload;
+      state.missions = action.payload.map((mission) => ({
+        ...state.missions,
+        mission_id: mission.mission_id,
+        mission_name: mission.mission_name,
+        description: mission.description,
+      }));
     },
   },
 });

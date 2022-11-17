@@ -5,10 +5,8 @@ import { updateReserved } from './redux/missions/missions';
 const MyProfile = () => {
   const fetchedMissions = useSelector((state) => state.missionSlice);
   const reservedMissions = fetchedMissions.missions.filter(
-    (mission) => mission.reserved === true,
+    (mission) => mission.reserved === true
   );
-  const fetchedRockets = useSelector((state) => state.rockets);
-  const reservedRockets = fetchedRockets.filter((rocket) => rocket.reserved);
   const dispatch = useDispatch();
   return (
     <section className="profile">
@@ -43,13 +41,6 @@ const MyProfile = () => {
       </div>
       <div className="profile-rockets">
         <h3 className="profile-title">My Rockets</h3>
-        <ul>
-          {reservedRockets.map((rocket) => (
-            <li key={rocket.rocket_id}>
-              <span>{rocket.rocket_name}</span>
-            </li>
-          ))}
-        </ul>
       </div>
     </section>
   );

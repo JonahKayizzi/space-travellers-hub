@@ -1,6 +1,9 @@
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { rocketReserve } from '../redux/rockets/rockets';
 
 const Rocket = (props) => {
+  const dispatch = useDispatch();
   const { rocket } = props;
   return (
     <div className="card flex">
@@ -13,8 +16,12 @@ const Rocket = (props) => {
           <span className="rocket-name">{rocket.rocket_name}</span>
         </div>
         <div className="description">
+          {rocket.reserved ? <span className="badge">Reserved</span> : ''}
           <span>{rocket.description}</span>
         </div>
+        <button type="submit" className={rocket.reserved ? 'reserved' : 'not-reserved'} onClick={() => dispatch(rocketReserve(rocket.rocket_id))}>
+          {rocket.reserved ? 'Cancel Reservation' : 'Reserve Rocket'}
+        </button>
       </div>
     </div>
   );
@@ -22,9 +29,11 @@ const Rocket = (props) => {
 
 Rocket.propTypes = {
   rocket: PropTypes.shape({
+    rocket_id: PropTypes.string,
     rocket_name: PropTypes.string,
     description: PropTypes.string,
     flickr_images: PropTypes.arrayOf(PropTypes.string),
+    reserved: PropTypes.bool,
   }).isRequired,
 };
 

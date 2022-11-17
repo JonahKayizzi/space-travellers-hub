@@ -1,17 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchMissons, updateReserved } from './redux/missions/missions';
+import { updateReserved } from './redux/missions/missions';
 
 const Missions = () => {
   const fetchedMissions = useSelector((state) => state.missionSlice);
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchMissons());
-  }, []);
-
-  const handleJoin = (missionId) => {
-    dispatch(updateReserved(missionId));
-  };
 
   return (
     <table className="missions-table">
@@ -40,7 +33,7 @@ const Missions = () => {
               <button
                 className="mission-button"
                 type="button"
-                onClick={() => handleJoin(mission.mission_id)}
+                onClick={() => dispatch(updateReserved(mission.mission_id))}
                 id={mission.mission_id}
               >
                 {mission.reserved ? 'Leave Mission' : 'Join Mission'}

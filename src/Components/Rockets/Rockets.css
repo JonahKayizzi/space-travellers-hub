@@ -33,4 +33,31 @@
 
 .description {
   margin: 10px 0;
+  line-height: 30px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.badge {
+  margin-right: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: aqua;
+  color: rgb(11, 13, 77);
+  font-weight: bold;
+}
+
+.reserved {
+  padding: 10px;
+  background-color: #3c3c3c;
+  color: #fff;
+}
+
+.not-reserved {
+  padding: 10px;
+  background-color: #000000;
+  border: 1px solid #fff;
+  color: #fff;
 }

@@ -41,6 +41,7 @@ const missionsSlice = createSlice({
         mission_name: mission.mission_name,
         description: mission.description,
         reserved: false,
+        wiki: mission.wikipedia,
       }));
     },
   },

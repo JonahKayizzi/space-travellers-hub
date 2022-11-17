@@ -8,7 +8,7 @@ const Rocket = (props) => {
         <img src={rocket.flickr_images[0]} alt={rocket.rocket_name} />
       </div>
 
-      <div>
+      <div className="content">
         <div>
           <span className="rocket-name">{rocket.rocket_name}</span>
         </div>

@@ -1,17 +1,18 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateReserved } from './redux/missions/missions';
+import { rocketReserve } from './redux/rockets/rockets';
 
 const MyProfile = () => {
   const fetchedMissions = useSelector((state) => state.missionSlice);
   const reservedMissions = fetchedMissions.missions.filter(
-<<<<<<< HEAD
-    (mission) => mission.reserved === true
-=======
     (mission) => mission.reserved === true,
->>>>>>> 912eda4f4e0b265bd138aa0fe2e8424bfd443f0a
   );
+
+  const fetchedRockets = useSelector((state) => state.rockets);
+  const reservedRockets = fetchedRockets.filter((rocket) => rocket.reserved);
   const dispatch = useDispatch();
+
   return (
     <section className="profile">
       <div className="profile-missions">
@@ -43,8 +44,23 @@ const MyProfile = () => {
           )}
         </ul>
       </div>
-      <div className="profile-rockets">
+      <div className="profile-missions">
         <h3 className="profile-title">My Rockets</h3>
+        <ul className="missions-list">
+          {reservedRockets.map((rocket) => (
+            <li key={rocket.rocket_id}>
+              <span className="mission-title">{rocket.rocket_name}</span>
+              <button
+                className="mission-button leave-button"
+                type="button"
+                onClick={() => dispatch(rocketReserve(rocket.rocket_id))}
+                id={rocket.rocket_id}
+              >
+                Cancel Reservation
+              </button>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

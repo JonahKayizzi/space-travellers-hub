@@ -5,7 +5,11 @@ import { updateReserved } from './redux/missions/missions';
 const MyProfile = () => {
   const fetchedMissions = useSelector((state) => state.missionSlice);
   const reservedMissions = fetchedMissions.missions.filter(
+<<<<<<< HEAD
     (mission) => mission.reserved === true
+=======
+    (mission) => mission.reserved === true,
+>>>>>>> 912eda4f4e0b265bd138aa0fe2e8424bfd443f0a
   );
   const dispatch = useDispatch();
   return (

@@ -52,17 +52,18 @@ td {
 }
 
 .mission-status {
-  background-color: grey;
+  background-color: #8f3985;
   border-radius: 4px;
   font-size: 0.7em;
   text-align: center;
   padding: 0.5em;
   border: solid 1px #fff;
+  border: none;
 }
 
 .mission-button {
-  background-color: #000;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
   border: solid 1px #fff;
   padding: 1em;
   font-size: 0.7em;
@@ -80,13 +81,58 @@ td {
 }
 
 .reserved td p {
-  background-color: #fff;
-  color: #000;
+  background-color: #f93d66;
+  color: #fff;
   font-weight: bold;
+  border: none;
 }
 
-.reserved td button {
+.reserved td button,
+.leave-button {
   background-color: rgba(255, 255, 255, 0.1);
   color: #fff;
-  border: none;
+  border: solid 1px #fff;
+}
+
+.profile {
+  display: flex;
+  margin: 3em 0;
+  justify-content: space-around;
+  width: 90%;
+}
+
+.profile-missions {
+  width: 45%;
+}
+
+.missions-list {
+  list-style: none;
+}
+
+.missions-list li {
+  border-bottom: solid 1pt rgba(255, 255, 255, 0.3);
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  font-weight: 100;
+  font-size: 0.9em;
+  padding: 1em;
+}
+
+.no-missions {
+  margin: 1em;
+  background-color: #fff;
+  text-align: center;
+  color: #000;
+  padding: 1em;
+  box-shadow: 2px 2px 2px 2px rgba(255, 255, 255, 0.3);
+}
+
+.mission-title {
+  width: 50%;
+  align-self: end;
+}
+
+.missions-list li button {
+  width: 20%;
 }

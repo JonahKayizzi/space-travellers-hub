@@ -1,0 +1,63 @@
+.container {
+  margin-top: 20px;
+  margin-left: 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.flex {
+  display: flex;
+}
+
+.card {
+  gap: 15px;
+  margin: 25px 0;
+}
+
+.flickr {
+  width: 30%;
+}
+
+.flickr img {
+  width: 100%;
+}
+
+.content {
+  width: 60%;
+}
+
+.rocket-name {
+  font-size: 25px;
+  line-height: 40px;
+}
+
+.description {
+  margin: 10px 0;
+  line-height: 30px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.badge {
+  margin-right: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: aqua;
+  color: rgb(11, 13, 77);
+  font-weight: bold;
+}
+
+.reserved {
+  padding: 10px;
+  background-color: #3c3c3c;
+  color: #fff;
+}
+
+.not-reserved {
+  padding: 10px;
+  background-color: #000;
+  border: 1px solid #fff;
+  color: #fff;
+}

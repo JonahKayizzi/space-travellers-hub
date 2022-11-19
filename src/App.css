@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+table {
+  border: solid 1px gray;
+  text-indent: initial;
+  border-spacing: 0;
+  border-collapse: collapse;
+  opacity: 1;
+  display: table;
+  margin: 3em 0;
+  width: 95%;
+  box-sizing: border-box;
+  padding: 0.3em;
+}
+
+tbody {
+  display: table-row-group;
+  vertical-align: middle;
+  border: inherit;
+}
+
+tr {
+  display: table-row;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+  border: inherit;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+th {
+  padding: 1em;
+}
+
+td {
+  display: table-cell;
+  padding: 1em;
+  border: 1pt solid rgba(255, 255, 255, 0.3);
+  font-weight: 100;
+  font-size: 0.9em;
+}
+
+.mission-status {
+  background-color: #8f3985;
+  border-radius: 4px;
+  font-size: 0.7em;
+  text-align: center;
+  padding: 0.5em;
+  border: solid 1px #fff;
+  border: none;
+}
+
+.mission-button {
+  background-color: #fff;
+  color: #000;
+  border: solid 1px #fff;
+  padding: 1em;
+  font-size: 0.7em;
+  cursor: pointer;
+}
+
+.ms-name-col,
+.ms-status-col,
+.ms-btn-col {
+  width: 12%;
+}
+
+.ms-btn-col {
+  text-align: center;
+}
+
+.reserved td p {
+  background-color: #f93d66;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+}
+
+.reserved td button,
+.leave-button {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: solid 1px #fff;
+}
+
+.profile {
+  display: flex;
+  margin: 3em 0;
+  justify-content: space-around;
+  width: 90%;
+}
+
+.profile-missions {
+  width: 45%;
+}
+
+.missions-list {
+  list-style: none;
+}
+
+.missions-list li {
+  border-bottom: solid 1pt rgba(255, 255, 255, 0.3);
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  font-weight: 100;
+  font-size: 0.9em;
+  padding: 1em;
+}
+
+.no-missions {
+  margin: 1em;
+  background-color: #fff;
+  text-align: center;
+  color: #000;
+  padding: 1em;
+  box-shadow: 2px 2px 2px 2px rgba(255, 255, 255, 0.3);
+}
+
+.mission-title {
+  width: 50%;
+  align-self: end;
+}
+
+.missions-list li button {
+  width: 20%;
+}

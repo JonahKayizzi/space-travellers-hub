@@ -1,0 +1,44 @@
+header {
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid rgb(38, 38, 39);
+  padding: 8px 30px;
+}
+
+li a {
+  text-decoration: none;
+}
+
+.my-flex {
+  display: flex;
+}
+
+.logo {
+  align-items: center;
+  gap: 20px;
+}
+
+.logo-title {
+  font-size: 30px;
+}
+
+.logo-img {
+  background-color: #fff;
+}
+
+.nav-list {
+  list-style: none;
+  gap: 5em;
+}
+
+.nav-list li a {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.active {
+  text-decoration: underline;
+}
